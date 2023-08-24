@@ -14,4 +14,5 @@ export default defineConfig({
     'https://www.googletagmanager.com/gtag/js?id=G-7XLKHE56WW',
     "window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-7XLKHE56WW');",
   ],
+  styles: [`body {margin:0}`],
 });

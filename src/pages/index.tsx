@@ -1,3 +1,5 @@
+import SPG from '../assets/SPG.svg';
+
 export default () => {
-  return <div>Home</div>;
+  return <img width="100%" src={SPG} />;
 };
