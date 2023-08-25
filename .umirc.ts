@@ -5,14 +5,10 @@ export default defineConfig({
   favicons: [
     'https://mdn.alipayobjects.com/huamei_xgb3qj/afts/img/A*JiTDRaNWTQkAAAAAAAAAAAAADtmcAQ/original',
   ],
-  routes: [
-    { path: '/', component: 'index' },
-    { path: '/introduction', component: 'introduction' },
-  ],
+  routes: [{ path: '/', component: './home/index' }],
   npmClient: 'pnpm',
   headScripts: [
     'https://www.googletagmanager.com/gtag/js?id=G-7XLKHE56WW',
     "window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-7XLKHE56WW');",
   ],
-  styles: [`body {margin:0}`],
 });
