@@ -1,15 +1,14 @@
-import React from 'react';
-import { Button, Tabs, Descriptions } from 'antd';
-import styles from './index.less';
 import {
+  COPYRIGHT_INFORMATION_CONFIG,
   PARAGRAPH,
   SPG_CASE_CONFIG,
   SPG_POINT_CONFIG,
-  COPYRIGHT_INFORMATION_CONFIG,
 } from '@/constants/homepage';
+import { Button, Descriptions, Tabs } from 'antd';
+import AboutUs from './components/AboutUs';
 import CustomItem from './components/CustomItem';
 import SpgCaseItem from './components/SpgCaseItem';
-import AboutUs from './components/AboutUs';
+import styles from './index.less';
 
 export default () => {
   const handleDownload = () => {

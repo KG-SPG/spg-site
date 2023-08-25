@@ -199,9 +199,10 @@
       padding: 40px 20px;
     }
     .content {
-      margin: 0 auto;
       display: flex;
-      max-width: 1200px;
+      @media (max-width: 768px) {
+        flex-direction: column;
+      }
       :global {
         .ant-descriptions-title {
           color: rgba(255, 255, 255, 0.88);

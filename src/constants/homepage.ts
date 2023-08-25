@@ -229,7 +229,7 @@ export const COPYRIGHT_INFORMATION_CONFIG: {
   {
     title: intl('牵头编写单位', 'Lead Writing Entity'),
     unitNames: [intl('蚂蚁科技集团股份有限公司', 'Ant Group Co., Ltd.')],
-    style: { width: 240, marginRight: 20 },
+    style: { flex: 0.5 },
   },
   {
     title: intl('参与编写单位', 'Contributing Entities'),
@@ -250,6 +250,6 @@ export const COPYRIGHT_INFORMATION_CONFIG: {
         'Institute of Computing Technology, Chinese Academy of Sciences'
       ),
     ],
-    style: { width: 720, marginRight: 20 },
+    style: { flex: 1 },
   },
 ];
