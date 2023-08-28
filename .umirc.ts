@@ -5,7 +5,10 @@ export default defineConfig({
   favicons: [
     'https://mdn.alipayobjects.com/huamei_xgb3qj/afts/img/A*JiTDRaNWTQkAAAAAAAAAAAAADtmcAQ/original',
   ],
-  routes: [{ path: '/', component: './home/index' }],
+  routes: [
+    { path: '/', component: './home/index' },
+    { path: '/download', component: './download/index' },
+  ],
   npmClient: 'pnpm',
   headScripts: [
     'https://www.googletagmanager.com/gtag/js?id=G-7XLKHE56WW',
