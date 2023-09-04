@@ -12,7 +12,7 @@ import styles from './index.less';
 
 export default () => {
   const handleDownload = () => {
-    window.open('https://survey.alipay.com/apps/zhiliao/K7MilJd4E');
+    window.open('https://survey.aliyun.com/apps/zhiliao/wUwnL6sPC');
   };
 
   return (
