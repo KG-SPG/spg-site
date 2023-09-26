@@ -8,6 +8,7 @@ import { Button, Descriptions, Tabs } from 'antd';
 import AboutUs from './components/AboutUs';
 import CustomItem from './components/CustomItem';
 import SpgCaseItem from './components/SpgCaseItem';
+import { lang } from '../../constants/homepage';
 import styles from './index.less';
 
 export default () => {
@@ -127,6 +128,20 @@ export default () => {
               </Descriptions>
             );
           })}
+        </div>
+        <div className={styles.language}>
+          <div
+            style={{ cursor: 'pointer' }}
+            onClick={() => {
+              localStorage.setItem(
+                'lang',
+                lang === 'zh-CN' ? 'en-US' : 'zh-CN'
+              );
+              window.location.reload();
+            }}
+          >
+            {lang === 'zh-CN' ? 'English' : '中文'}
+          </div>
         </div>
       </div>
       <AboutUs />

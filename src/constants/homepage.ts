@@ -1,7 +1,8 @@
 import { CaseItemProps } from '@/pages/home/components/SpgCaseItem';
 import { CSSProperties } from 'react';
 
-export const lang = navigator.language || 'zh-CN';
+export const lang =
+  localStorage.getItem('lang') || navigator.language || 'zh-CN';
 
 const intl = (zh: string, en?: string) => {
   if (!en) return zh;
