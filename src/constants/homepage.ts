@@ -58,7 +58,7 @@ export const SPG_POINT_CONFIG = [
     title: intl('深度语义上下文关联', 'Deep Semantic Contextual Association'),
     detail: intl(
       '通过对业务主体属性进行标准化语义增强，将数据进行知识化管理，丰富实体间语义关联，进而提升业务效果',
-      'Enhancing Data Knowledge Management through Standardized Semantic Enrichment of Business Entity Attributes. By standardizing semantic enrichment of business entity attributes, data can be managed knowledge-based, thereby enriching semantic associations among entities and further improving business efficiency.'
+      'By standardizing semantic enrichment of business entity attributes, data can be managed knowledge-based, thereby enriching semantic associations among entities and further improving business efficiency'
     ),
     imgUrl:
       'https://mdn.alipayobjects.com/huamei_xgb3qj/afts/img/A*atFpQ6TAgRsAAAAAAAAAAAAADtmcAQ/original',
@@ -70,7 +70,7 @@ export const SPG_POINT_CONFIG = [
     ),
     detail: intl(
       '通过可编程知识图谱框架，让领域知识图谱很容易和大模型进行结合，增强了大模型在实际应用中的可控性',
-      'Facilitating the Integration of Domain Knowledge Graphs with Large Models through a Programmable Knowledge Graph Framework. Leveraging a programmable knowledge graph framework makes it easy to combine domain knowledge graphs with large language models(LLM), thereby enhancing the controllability of LLMs in practical applications.'
+      'Leveraging a programmable knowledge graph framework makes it easy to combine domain knowledge graphs with large language models(LLM), thereby enhancing the controllability of LLMs in practical applications.'
     ),
     imgUrl:
       'https://mdn.alipayobjects.com/huamei_xgb3qj/afts/img/A*gkBRSIzFTjkAAAAAAAAAAAAADtmcAQ/original',
