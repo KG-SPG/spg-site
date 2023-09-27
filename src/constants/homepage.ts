@@ -49,7 +49,7 @@ export const SPG_POINT_CONFIG = [
     ),
     detail: intl(
       '通过标准化语义框架，可以实现将企业多源异构，时序动态，关联复杂的数据进行连接，打破数据孤岛',
-      'By employing a standardized semantic framework, it becomes feasible to connect diverse, heterogeneous, time-varying, and intricately related data sources within an enterprise, thereby dismantling data silos'
+      'By employing a standardized semantic framework, it becomes feasible to connect diverse, heterogeneous, sequential and intricately related data sources within an enterprise, thereby dismantling data silos'
     ),
     imgUrl:
       'https://mdn.alipayobjects.com/huamei_xgb3qj/afts/img/A*IhgmRZrCbZMAAAAAAAAAAAAADtmcAQ/original',
@@ -58,7 +58,7 @@ export const SPG_POINT_CONFIG = [
     title: intl('深度语义上下文关联', 'Deep Semantic Contextual Association'),
     detail: intl(
       '通过对业务主体属性进行标准化语义增强，将数据进行知识化管理，丰富实体间语义关联，进而提升业务效果',
-      'Enhancing Data Knowledge Management through Standardized Semantic Enrichment of Business Entity Attributes. By standardizing semantic enrichment of business entity attributes, data can be managed in a knowledge-centric manner, enriching semantic associations among entities and consequently improving business efficiency.'
+      'Enhancing Data Knowledge Management through Standardized Semantic Enrichment of Business Entity Attributes. By standardizing semantic enrichment of business entity attributes, data can be managed knowledge-based, thereby enriching semantic associations among entities and further improving business efficiency.'
     ),
     imgUrl:
       'https://mdn.alipayobjects.com/huamei_xgb3qj/afts/img/A*atFpQ6TAgRsAAAAAAAAAAAAADtmcAQ/original',
@@ -70,7 +70,7 @@ export const SPG_POINT_CONFIG = [
     ),
     detail: intl(
       '通过可编程知识图谱框架，让领域知识图谱很容易和大模型进行结合，增强了大模型在实际应用中的可控性',
-      'Facilitating the Integration of Domain Knowledge Graphs with Large Models through a Programmable Knowledge Graph Framework. Leveraging a programmable knowledge graph framework makes it easy to combine domain-specific knowledge graphs with large models, thereby enhancing the controllability of large models in practical applications.'
+      'Facilitating the Integration of Domain Knowledge Graphs with Large Models through a Programmable Knowledge Graph Framework. Leveraging a programmable knowledge graph framework makes it easy to combine domain knowledge graphs with large language models(LLM), thereby enhancing the controllability of LLMs in practical applications.'
     ),
     imgUrl:
       'https://mdn.alipayobjects.com/huamei_xgb3qj/afts/img/A*gkBRSIzFTjkAAAAAAAAAAAAADtmcAQ/original',
@@ -78,10 +78,10 @@ export const SPG_POINT_CONFIG = [
 ];
 export const SPG_CASE_CONFIG: CaseItemProps[] = [
   {
-    title: intl('支付黑产图谱', 'Payment Black Market Knowledge Graph'),
+    title: intl('支付黑产图谱', 'Anti-Black Market'),
     desc: intl(
       '基于用户和应用之间的设备、网络、交易等基础信息，发掘黑产应用背后的黑产人员线索',
-      'Leveraging foundational information such as devices, networks, transactions, etc., between users and applications to uncover clues about the individuals behind illicit activities in the underground economy'
+      'Leveraging foundational information such as devices, networks, transactions, etc., between users and applications to uncover clues about the individuals behind illicit activities in the black market'
     ),
     details: [
       {
@@ -149,7 +149,7 @@ export const SPG_CASE_CONFIG: CaseItemProps[] = [
       'https://mdn.alipayobjects.com/huamei_xgb3qj/afts/img/A*LDh1RZH5OyQAAAAAAAAAAAAADtmcAQ/original',
   },
   {
-    title: intl('事理图谱', 'Causation Graph'),
+    title: intl('事理图谱', 'Eventic Graph'),
     desc: intl(
       '对宏观经济形势、政策，中观行业现象，微观公司事件综合分析，辅助针对特定产业链上下游公司的风控预警，辅助机构风险评级。',
       'Comprehensive analysis of macroeconomic conditions, policies, mid-range industry trends, and micro-level corporate events, assisting in risk warnings for specific companies along the industrial supply chain, and aiding in institutional risk assessment.'
