@@ -20,9 +20,9 @@ export const PARAGRAPH = {
     '离散实体要素深度语义网络化，稀疏关系自动补全显性稠密',
     'Deep Semantic Networking of Discrete Entity Elements, Automatic Completion of Sparse Relationships for Enhanced Density'
   ),
-  SemanticEnhancedAttributes: intl(
+  SemanticEnhancedProperties: intl(
     '属性图语义增强',
-    'Semantic Enhancement of Attribute Graphs'
+    'Semantic Enhancement of Property Graphs'
   ),
   DataToKnowledgeProcess: intl(
     '数据到知识生产过程',
@@ -58,7 +58,7 @@ export const SPG_POINT_CONFIG = [
     title: intl('深度语义上下文关联', 'Deep Semantic Contextual Association'),
     detail: intl(
       '通过对业务主体属性进行标准化语义增强，将数据进行知识化管理，丰富实体间语义关联，进而提升业务效果',
-      'By standardizing semantic enrichment of business entity attributes, data can be managed knowledge-based, thereby enriching semantic associations among entities and further improving business efficiency'
+      'By standardizing semantic enrichment of business entity properties, data can be managed knowledge-based, thereby enriching semantic associations among entities and further improving business efficiency'
     ),
     imgUrl:
       'https://mdn.alipayobjects.com/huamei_xgb3qj/afts/img/A*atFpQ6TAgRsAAAAAAAAAAAAADtmcAQ/original',
@@ -112,7 +112,7 @@ export const SPG_CASE_CONFIG: CaseItemProps[] = [
         infoList: [
           intl(
             '属性语义类型替代基础类型定义，支持发掘更深度信息',
-            'Replacing Basic Type Definitions with Semantic Attribute Types to Enable Deeper Information Discovery'
+            'Replacing Basic Type Definitions with Semantic Property Types to Enable Deeper Information Discovery'
           ),
           intl(
             '知识建模和事实建模分层，基于业务领域知识定义逻辑点边类型，解决知识、事实建模混同导致图谱迭代演进困难的问题',

@@ -4,7 +4,8 @@ import {
   SPG_CASE_CONFIG,
   SPG_POINT_CONFIG,
 } from '@/constants/homepage';
-import { Button, Descriptions, Tabs } from 'antd';
+import { Button, Descriptions, Tabs, Select } from 'antd';
+import { GlobalOutlined } from '@ant-design/icons';
 import AboutUs from './components/AboutUs';
 import CustomItem from './components/CustomItem';
 import SpgCaseItem from './components/SpgCaseItem';
@@ -69,7 +70,7 @@ export default () => {
             items={[
               {
                 key: '1',
-                label: PARAGRAPH.SemanticEnhancedAttributes,
+                label: PARAGRAPH.SemanticEnhancedProperties,
                 children: (
                   <img src="https://mdn.alipayobjects.com/huamei_xgb3qj/afts/img/A*QQ9tR7YJoLYAAAAAAAAAAAAADtmcAQ/original" />
                 ),
@@ -130,18 +131,18 @@ export default () => {
           })}
         </div>
         <div className={styles.language}>
-          <div
-            style={{ cursor: 'pointer' }}
-            onClick={() => {
-              localStorage.setItem(
-                'lang',
-                lang === 'zh-CN' ? 'en-US' : 'zh-CN'
-              );
+          <GlobalOutlined />
+          <Select
+            defaultValue={lang}
+            onChange={(value) => {
+              localStorage.setItem('lang', value);
               window.location.reload();
             }}
-          >
-            {lang === 'zh-CN' ? 'English' : '中文'}
-          </div>
+            options={[
+              { label: '中文(简体)', value: 'zh-CN' },
+              { label: 'English(US)', value: 'en-US' },
+            ]}
+          />
         </div>
       </div>
       <AboutUs />
