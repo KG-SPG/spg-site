@@ -1,14 +1,17 @@
-import { PARAGRAPH } from '@/constants/homepage';
+import { useIntl } from '@/hooks/useIntl';
 import { WechatOutlined } from '@ant-design/icons';
 import { Typography, message } from 'antd';
 import copy from 'copy-to-clipboard';
 import React, { useEffect, useRef } from 'react';
 import styles from './AboutUs.less';
 
-const { Text, Title } = Typography;
+const { Text } = Typography;
 
 const AboutUs = () => {
   const [showQRCode, setShowQRCode] = React.useState(window.innerWidth >= 1280);
+  const {
+    Messages: { PARAGRAPH },
+  } = useIntl();
   const QRCodeRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {

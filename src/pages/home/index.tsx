@@ -1,18 +1,25 @@
-import {
-  COPYRIGHT_INFORMATION_CONFIG,
-  PARAGRAPH,
-  SPG_CASE_CONFIG,
-  SPG_POINT_CONFIG,
-} from '@/constants/homepage';
+import { useIntl } from '@/hooks/useIntl';
 import { Button, Descriptions, Tabs, Select } from 'antd';
 import { GlobalOutlined } from '@ant-design/icons';
 import AboutUs from './components/AboutUs';
 import CustomItem from './components/CustomItem';
 import SpgCaseItem from './components/SpgCaseItem';
-import { lang } from '../../constants/homepage';
 import styles from './index.less';
 
 export default () => {
+  const {
+    lang,
+    setLang,
+    Messages: {
+      COPYRIGHT_INFORMATION_CONFIG,
+      PARAGRAPH,
+      SPG_CASE_CONFIG,
+      SPG_POINT_CONFIG,
+    },
+  } = useIntl();
+
+  console.log('lang', lang)
+
   const handleDownload = () => {
     window.open('https://survey.aliyun.com/apps/zhiliao/wUwnL6sPC');
   };
@@ -133,10 +140,10 @@ export default () => {
         <div className={styles.language}>
           <GlobalOutlined />
           <Select
-            defaultValue={lang}
+            value={lang}
             onChange={(value) => {
               localStorage.setItem('lang', value);
-              window.location.reload();
+              setLang(value);
             }}
             options={[
               { label: '中文(简体)', value: 'zh-CN' },

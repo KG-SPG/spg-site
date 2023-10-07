@@ -8,6 +8,7 @@ export default defineConfig({
   routes: [
     { path: '/', component: './home/index' },
     { path: '/download', component: './download/index' },
+    { path: '/:lang', component: './home/index' },
   ],
   npmClient: 'pnpm',
   headScripts: [
