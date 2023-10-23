@@ -59,7 +59,13 @@ export default () => {
               <Button size="large" onClick={() => {}}>
                 {PARAGRAPH.QuickStart}
               </Button>
-              <Button size="large" icon={<GithubOutlined />} onClick={() => {}}>
+              <Button
+                size="large"
+                icon={<GithubOutlined />}
+                onClick={() => {
+                  window.open('https://github.com/OpenSPG/openspg');
+                }}
+              >
                 {PARAGRAPH.Github}
               </Button>
             </div>
