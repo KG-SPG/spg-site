@@ -1,26 +1,31 @@
-import { useState, useMemo, useCallback, useEffect } from 'react'
-import { useParams } from 'umi'
+import { useState, useMemo, useCallback, useEffect } from 'react';
+import { useParams } from 'umi';
 
 export const useIntl = () => {
-  const params = useParams()
-  const [lang, _setLang] = useState(localStorage.getItem('lang') || navigator.language || 'zh-CN')
+  const params = useParams();
+  const [lang, _setLang] = useState(
+    localStorage.getItem('lang') || navigator.language || 'zh-CN'
+  );
 
   const setLang = (language: string) => {
-    _setLang(language)
-    localStorage.setItem('lang', language)
-  }
+    _setLang(language);
+    localStorage.setItem('lang', language);
+  };
 
-  const intl = useCallback((zh: string, en?: string) => {
-    if (!en) return zh;
-    if (lang !== 'zh-CN') return en;
-    return zh;
-  }, [lang]);
+  const intl = useCallback(
+    (zh: string, en?: string) => {
+      if (!en) return zh;
+      if (lang !== 'zh-CN') return en;
+      return zh;
+    },
+    [lang]
+  );
 
   useEffect(() => {
     if (params.lang) {
-      setLang(params.lang)
+      setLang(params.lang);
     }
-  }, [params])
+  }, [params]);
 
   const Messages = useMemo(() => {
     return {
@@ -38,22 +43,37 @@ export const useIntl = () => {
           '属性图语义增强',
           'Semantic Enhancement of Property Graphs'
         ),
+        SemanticEnhancedPropertiesImg: intl(
+          'https://mdn.alipayobjects.com/huamei_xgb3qj/afts/img/A*TdfeRIfHnisAAAAAAAAAAAAADtmcAQ/original',
+          'https://mdn.alipayobjects.com/huamei_xgb3qj/afts/img/A*tzHwTJy7TDIAAAAAAAAAAAAADtmcAQ/original'
+        ),
         DataToKnowledgeProcess: intl(
           '数据到知识生产过程',
           'The Data-to-Knowledge Production Process'
+        ),
+        DataToKnowledgeProcessImg: intl(
+          'https://mdn.alipayobjects.com/huamei_xgb3qj/afts/img/A*DcYSS7qaYJkAAAAAAAAAAAAADtmcAQ/original',
+          'https://mdn.alipayobjects.com/huamei_xgb3qj/afts/img/A*a3i2T4w41AMAAAAAAAAAAAAADtmcAQ/original'
         ),
         SPGSemanticFramework: intl('SPG语义框架', 'SPG Semantic Framework'),
         AccelerateDataIntegration: intl(
           '加速企业海量数据知识化集成，无缝衔接AI技术框架应用落地',
           'Accelerating Enterprise-Scale Data Knowledge Integration, Seamless Integration with AI Technology Frameworks for Real-World Applications'
         ),
+        AccelerateDataIntegrationImg: intl(
+          'https://mdn.alipayobjects.com/huamei_xgb3qj/afts/img/A*9BKUQYrL56IAAAAAAAAAAAAADtmcAQ/original',
+          'https://mdn.alipayobjects.com/huamei_xgb3qj/afts/img/A*eK3wTqkCHnAAAAAAAAAAAAAADtmcAQ/original'
+        ),
         SPGCaseStudies: intl('SPG案例', 'SPG Case Studies'),
         WhitepaperDownload: intl('白皮书下载', 'Whitepaper Download'),
+        QuickStart: intl('快速开始', 'Quick Start'),
+        Github: intl('Github', 'Github'),
         ContactUs: intl('联系我们', 'Contact Us'),
         CopiedToClipboard: intl('已复制到剪贴板', 'Copied to Clipboard'),
         FollowUs: intl('关注我们', 'Follow Us'),
         SPGFramework: intl('语义增强可编程图谱框架', 'SPG Framework'),
       },
+      SPG_FEATURE: {},
       SPG_POINT_CONFIG: [
         {
           title: intl(
@@ -65,16 +85,21 @@ export const useIntl = () => {
             'By employing a standardized semantic framework, it becomes feasible to connect diverse, heterogeneous, sequential and intricately related data sources within an enterprise, thereby dismantling data silos'
           ),
           imgUrl:
-            'https://mdn.alipayobjects.com/huamei_xgb3qj/afts/img/A*IhgmRZrCbZMAAAAAAAAAAAAADtmcAQ/original',
+            'https://mdn.alipayobjects.com/huamei_xgb3qj/afts/img/A*88JoRLde504AAAAAAAAAAAAADtmcAQ/original',
         },
         {
-          title: intl('深度语义上下文关联', 'Deep Semantic Contextual Association'),
+          title: intl(
+            '深度语义上下文关联',
+            'Deep Semantic Contextual Association'
+          ),
           detail: intl(
             '通过对业务主体属性进行标准化语义增强，将数据进行知识化管理，丰富实体间语义关联，进而提升业务效果',
             'By standardizing semantic enrichment of business entity properties, data can be managed knowledge-based, thereby enriching semantic associations among entities and further improving business efficiency'
           ),
-          imgUrl:
-            'https://mdn.alipayobjects.com/huamei_xgb3qj/afts/img/A*atFpQ6TAgRsAAAAAAAAAAAAADtmcAQ/original',
+          imgUrl: intl(
+            'https://mdn.alipayobjects.com/huamei_xgb3qj/afts/img/A*nwxSTrutpxkAAAAAAAAAAAAADtmcAQ/original',
+            'https://mdn.alipayobjects.com/huamei_xgb3qj/afts/img/A*9walTIIM8PsAAAAAAAAAAAAADtmcAQ/original'
+          ),
         },
         {
           title: intl(
@@ -85,8 +110,10 @@ export const useIntl = () => {
             '通过可编程知识图谱框架，让领域知识图谱很容易和大模型进行结合，增强了大模型在实际应用中的可控性',
             'Leveraging a programmable knowledge graph framework makes it easy to combine domain knowledge graphs with large language models(LLM), thereby enhancing the controllability of LLMs in practical applications.'
           ),
-          imgUrl:
-            'https://mdn.alipayobjects.com/huamei_xgb3qj/afts/img/A*gkBRSIzFTjkAAAAAAAAAAAAADtmcAQ/original',
+          imgUrl: intl(
+            'https://mdn.alipayobjects.com/huamei_xgb3qj/afts/img/A*WOcCS5fVEeAAAAAAAAAAAAAADtmcAQ/original',
+            'https://mdn.alipayobjects.com/huamei_xgb3qj/afts/img/A*wsR8R7o7ysgAAAAAAAAAAAAADtmcAQ/original'
+          ),
         },
       ],
       SPG_CASE_CONFIG: [
@@ -158,8 +185,10 @@ export const useIntl = () => {
               ],
             },
           ],
-          imgUrl:
+          imgUrl: intl(
             'https://mdn.alipayobjects.com/huamei_xgb3qj/afts/img/A*LDh1RZH5OyQAAAAAAAAAAAAADtmcAQ/original',
+            'https://mdn.alipayobjects.com/huamei_xgb3qj/afts/img/A*G0g5S5EJTmEAAAAAAAAAAAAADtmcAQ/original'
+          ),
         },
         {
           title: intl('事理图谱', 'Eventic Graph'),
@@ -229,8 +258,10 @@ export const useIntl = () => {
               ],
             },
           ],
-          imgUrl:
-            'https://mdn.alipayobjects.com/huamei_xgb3qj/afts/img/A*TnfRQLIzfRIAAAAAAAAAAAAADtmcAQ/original',
+          imgUrl: intl(
+            'https://mdn.alipayobjects.com/huamei_xgb3qj/afts/img/A*cR-WT6jHC5IAAAAAAAAAAAAADtmcAQ/original',
+            'https://mdn.alipayobjects.com/huamei_xgb3qj/afts/img/A*ltIqSZdIvcAAAAAAAAAAAAAADtmcAQ/original'
+          ),
         },
       ],
       /**页面底部版权信息配置 */
@@ -244,7 +275,10 @@ export const useIntl = () => {
           title: intl('参与编写单位', 'Contributing Entities'),
           unitNames: [
             intl('同济大学', 'Tongji University'),
-            intl('浙江创邻科技有限公司', 'Zhejiang Chuanglin Technology Co., Ltd.'),
+            intl(
+              '浙江创邻科技有限公司',
+              'Zhejiang Chuanglin Technology Co., Ltd.'
+            ),
             intl('浙江大学', 'Zhejiang University'),
             intl('天津大学', 'Tianjin University'),
             intl('达观数据有限公司', 'Datagrand Inc.'),
@@ -261,14 +295,14 @@ export const useIntl = () => {
           ],
           style: { flex: 1 },
         },
-      ]
-    }
-  }, [intl])
+      ],
+    };
+  }, [intl]);
 
   return {
     lang,
     setLang,
     intl,
     Messages,
-  }
-}
+  };
+};

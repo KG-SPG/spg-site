@@ -18,7 +18,7 @@ const CustomItem = (props: Props) => {
         style={{
           height: 224,
           display: 'flex',
-          padding: 5,
+          padding: 20,
           justifyContent: 'center',
           alignItems: 'center',
           borderRadius: '8px 8px 0 0',
@@ -34,13 +34,14 @@ const CustomItem = (props: Props) => {
         style={{
           backgroundColor: 'rgba(243,247,255,1)',
           padding: 24,
-          textAlign: 'left',
+          textAlign: 'center',
         }}
       >
         <div
           style={{
             fontWeight: 500,
-            fontSize: 24,
+            fontSize: 20,
+            margin: '10px 0',
           }}
         >
           {title}

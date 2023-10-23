@@ -1,88 +1,83 @@
-.container{
-    margin-bottom: 45px;
-    .title{
-        font-size: 20px;
-        font-weight: 600;
-        margin-bottom: 16px;
+.container {
+  margin-bottom: 45px;
+  .title {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 16px;
+  }
+  .desc {
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.45);
+    margin-bottom: 24px;
+  }
+  .content-container {
+    display: grid;
+    grid-template: repeat(1, 1fr) / repeat(2, 1fr);
+    gap: 15px;
+
+    @media (max-width: 814px) {
+      grid-template: repeat(1, 1fr) / repeat(1, 1fr);
     }
-    .desc{
-        font-size: 14px;
-        color: rgba(0,0,0,0.45);
-        margin-bottom: 24px;
-    }
-   
-    .content{
-        display: grid;
-        grid-gap: 150px;
-        grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
-        width: 100%;
-        text-align: left;
-        margin-bottom: 45px;
-        @media (max-width: 1280px) {
-            grid-gap: 60px;
-        }
-        @media (max-width: 768px) {
-            grid-gap: 20px;
-        }
-        .item-container{
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            align-items: center;
-            &:last-child{
-                .item-list::after{
-                    display: none;
-                } 
-            }
-            .point{
-                font-size: 16px;
-                font-weight: 600; 
-                margin-bottom: 12px;
-            }
-            .item-list{
-                position: relative;
-                &::after{
-                    content: '';
-                    display: block;
-                    width: 1px;
-                    height: 120px;
-                    background-color: rgba(0,0,0,0.08);
-                    position: absolute;
-                    top: 50%;
-                    right: -74px;
-                    transform: translateY(-50%);
-                    @media (max-width: 1440px) {
-                        display: none;
-                    }
-                }
-                .item{
-                    color: rgba(0,0,0,0.45);
-                }
-            }
-        }
-      
-        
-    }
-    .img-container{
-        height: 470px;
-        border-radius: 16px;
-        @media (max-width: 1014px) {
-            height: 300px;
-        }
-        @media (max-width: 814px) {
-            height: 260px;
-        }
-        @media (max-width: 480px) {
-            height: 200px;
-        }
-        img{
-            border: 1px solid rgba(47,84,235,0.20);
-            border-radius: 16px;
-            background-color: #fff;
-            padding: 20px;
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      gap: 15px;
+
+      @media (max-width: 1280px) {
+      }
+      @media (max-width: 768px) {
+      }
+      .item-background {
+        background-color: rgba(255, 255, 255, 0.5);
+        border-radius: 15px;
+
+        .item-container {
+          padding: 15px;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          text-align: left;
+
+          .point {
             width: 100%;
-            height: 100%;
-            object-fit: contain;
+            display: flex;
+            gap: 5px;
+            color: #1a1b25;
+            .circle {
+              margin: 0.3rem 0;
+              width: 0.8rem;
+              height: 0.8rem;
+              border-radius: 0.4rem;
+              border: 0.15rem solid #2f54eb;
+              flex-shrink: 0;
+            }
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 12px;
+          }
+          .item-list {
+            position: relative;
+            .item {
+              font-size: 14px;
+              color: rgba(0, 0, 0, 0.45);
+            }
+          }
         }
+      }
     }
+    .img-container {
+      border-radius: 16px;
+      img {
+        border: 1px solid rgba(47, 84, 235, 0.2);
+        border-radius: 16px;
+        background-color: #fff;
+        padding: 20px;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+  }
 }

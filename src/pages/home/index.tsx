@@ -1,6 +1,6 @@
 import { useIntl } from '@/hooks/useIntl';
-import { Button, Descriptions, Tabs, Select } from 'antd';
-import { GlobalOutlined } from '@ant-design/icons';
+import { Button, Descriptions, Tabs, Select, Divider } from 'antd';
+import { GithubOutlined, GlobalOutlined } from '@ant-design/icons';
 import AboutUs from './components/AboutUs';
 import CustomItem from './components/CustomItem';
 import SpgCaseItem from './components/SpgCaseItem';
@@ -18,8 +18,6 @@ export default () => {
     },
   } = useIntl();
 
-  console.log('lang', lang)
-
   const handleDownload = () => {
     window.open('https://survey.aliyun.com/apps/zhiliao/wUwnL6sPC');
   };
@@ -27,28 +25,44 @@ export default () => {
   return (
     <div className={styles.container}>
       <div className={styles.banner}>
+        <div className={styles.header}>
+          <img src="https://mdn.alipayobjects.com/huamei_xgb3qj/afts/img/A*D5uYQpLS8dsAAAAAAAAAAAAADtmcAQ/original" />
+          <Divider className={styles.divider} type="vertical" />
+          <div className={styles.language}>
+            <GlobalOutlined />
+            <Select
+              value={lang}
+              bordered={false}
+              onChange={(value) => {
+                localStorage.setItem('lang', value);
+                setLang(value);
+              }}
+              options={[
+                { label: '中文(简体)', value: 'zh-CN' },
+                { label: 'English(US)', value: 'en-US' },
+              ]}
+            />
+          </div>
+        </div>
         <div className={styles.middle}>
           <div className={styles.left}>
-            <div className={styles.logo}>
-              <img
-                src={
-                  'https://mdn.alipayobjects.com/huamei_xgb3qj/afts/img/A*JiTDRaNWTQkAAAAAAAAAAAAADtmcAQ/original'
-                }
-              />
-            </div>
             <div className={styles['title-container']}>
               <div className={styles.title}>
                 <div>语义增强可编程知识图谱SPG</div>
                 <div>(Semantic-enhanced Programmable Graph)</div>
               </div>
             </div>
-            <Button
-              type="primary"
-              className={styles.customBtn}
-              onClick={handleDownload}
-            >
-              {PARAGRAPH.WhitepaperDownload}
-            </Button>
+            <div className={styles.btnGroup}>
+              <Button size="large" type="primary" onClick={handleDownload}>
+                {PARAGRAPH.WhitepaperDownload}
+              </Button>
+              <Button size="large" onClick={() => {}}>
+                {PARAGRAPH.QuickStart}
+              </Button>
+              <Button size="large" icon={<GithubOutlined />} onClick={() => {}}>
+                {PARAGRAPH.Github}
+              </Button>
+            </div>
           </div>
         </div>
       </div>
@@ -79,15 +93,16 @@ export default () => {
                 key: '1',
                 label: PARAGRAPH.SemanticEnhancedProperties,
                 children: (
-                  <img src="https://mdn.alipayobjects.com/huamei_xgb3qj/afts/img/A*QQ9tR7YJoLYAAAAAAAAAAAAADtmcAQ/original" />
+                  <img
+                    style={{ padding: 10 }}
+                    src={PARAGRAPH.SemanticEnhancedPropertiesImg}
+                  />
                 ),
               },
               {
                 key: '2',
                 label: PARAGRAPH.DataToKnowledgeProcess,
-                children: (
-                  <img src="https://mdn.alipayobjects.com/huamei_xgb3qj/afts/img/A*kCsNRIQ7wB4AAAAAAAAAAAAADtmcAQ/original" />
-                ),
+                children: <img src={PARAGRAPH.DataToKnowledgeProcessImg} />,
               },
             ]}
           />
@@ -99,23 +114,25 @@ export default () => {
           <div className={styles.info}>
             {PARAGRAPH.AccelerateDataIntegration}
           </div>
-          <img src="https://mdn.alipayobjects.com/huamei_xgb3qj/afts/img/A*9BKUQYrL56IAAAAAAAAAAAAADtmcAQ/original" />
+          <img src={PARAGRAPH.AccelerateDataIntegrationImg} />
         </div>
       </div>
       <div className={styles.case}>
         <div className={styles.content}>
           <div className={styles.title}>{PARAGRAPH.SPGCaseStudies}</div>
-          {SPG_CASE_CONFIG.map((item) => {
-            return <SpgCaseItem key={item.title} {...item} />;
+          {SPG_CASE_CONFIG.map((item, index) => {
+            return (
+              <SpgCaseItem
+                key={item.title}
+                reverse={index % 2 === 0}
+                {...item}
+              />
+            );
           })}
         </div>
       </div>
       <div className={styles.footer}>
-        <Button
-          type="primary"
-          className={styles.customBtn}
-          onClick={handleDownload}
-        >
+        <Button size="large" type="primary" onClick={handleDownload}>
           {PARAGRAPH.WhitepaperDownload}
         </Button>
       </div>
@@ -136,20 +153,6 @@ export default () => {
               </Descriptions>
             );
           })}
-        </div>
-        <div className={styles.language}>
-          <GlobalOutlined />
-          <Select
-            value={lang}
-            onChange={(value) => {
-              localStorage.setItem('lang', value);
-              setLang(value);
-            }}
-            options={[
-              { label: '中文(简体)', value: 'zh-CN' },
-              { label: 'English(US)', value: 'en-US' },
-            ]}
-          />
         </div>
       </div>
       <AboutUs />
